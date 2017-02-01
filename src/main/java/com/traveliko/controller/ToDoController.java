@@ -1,7 +1,7 @@
-package com.example.controller;
+package com.traveliko.controller;
 
-import com.example.model.ToDo;
-import com.example.repository.ToDoRepository;
+import com.traveliko.model.ToDo;
+import com.traveliko.repository.ToDoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**

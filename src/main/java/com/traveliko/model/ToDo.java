@@ -1,4 +1,4 @@
-package com.example.model;
+package com.traveliko.model;
 
 import javax.persistence.Entity;
 

@@ -1,6 +1,6 @@
-package com.example.repository;
+package com.traveliko.repository;
 
-import com.example.model.ToDo;
+import com.traveliko.model.ToDo;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

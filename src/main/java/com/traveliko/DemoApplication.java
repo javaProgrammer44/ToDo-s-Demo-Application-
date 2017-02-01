@@ -1,7 +1,7 @@
-package com.example;
+package com.traveliko;
 
-import com.example.model.ToDo;
-import com.example.repository.ToDoRepository;
+import com.traveliko.model.ToDo;
+import com.traveliko.repository.ToDoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;

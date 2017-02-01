@@ -1,9 +1,6 @@
-package com.example.service;
+package com.traveliko.service;
 
-import antlr.collections.List;
-
-import com.example.model.ToDo;
-import com.sun.xml.internal.bind.v2.TODO;
+import com.traveliko.model.ToDo;
 
 import org.springframework.stereotype.Component;
 
