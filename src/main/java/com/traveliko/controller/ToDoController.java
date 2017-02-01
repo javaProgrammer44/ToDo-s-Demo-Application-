@@ -57,8 +57,8 @@ public class ToDoController {
 
 
     /*
-This Request Handler used for Delete Single TODO Object from the repository
- */
+    This Request Handler used for Delete Single TODO Object from the repository
+    */
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public void deleteToDo(@PathVariable("id") Long id) {
         toDoRepository.delete(id);
