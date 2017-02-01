@@ -11,19 +11,17 @@ import org.springframework.context.ApplicationContext;
 @SpringBootApplication
 public class DemoApplication {
 
-	@Autowired
-	private ToDoRepository toDoRepository;
+    @Autowired
+    private ToDoRepository toDoRepository;
 
-	public static void main(String[] args) {
-		ApplicationContext ctx = SpringApplication.run(DemoApplication.class, args);
+    public static void main(String[] args) {
+        ApplicationContext ctx = SpringApplication.run(DemoApplication.class, args);
 
-		ToDo toDo = new ToDo("Yasir",true);
+        ToDo toDo = new ToDo("Yasir", true);
 
 
-		ToDoRepository repository = ctx.getBean(ToDoRepository.class);
-		repository.save(toDo);
+        ToDoRepository repository = ctx.getBean(ToDoRepository.class);
+        repository.save(toDo);
 
-//
-
-	}
+    }
 }

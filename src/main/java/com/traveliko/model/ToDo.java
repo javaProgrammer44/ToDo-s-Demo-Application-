@@ -1,6 +1,7 @@
 package com.traveliko.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  * Created by Yasir Shabbir on 2/1/2017.
@@ -9,9 +10,10 @@ import javax.persistence.Entity;
 public class ToDo {
 
 
+    //It's Auto Incremented Valued
     private static Long idValue = 1L;
 
-    @javax.persistence.Id
+    @Id
     private Long id;
     private String name;
     private Boolean isComplete;
@@ -59,5 +61,21 @@ public class ToDo {
                 ", name='" + name + '\'' +
                 ", isComplete=" + isComplete +
                 '}';
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ToDo toDo = (ToDo) o;
+
+        return id.equals(toDo.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return id.hashCode();
     }
 }

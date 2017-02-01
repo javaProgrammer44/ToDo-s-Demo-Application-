@@ -26,31 +26,42 @@ public class ToDoController {
         this.toDoRepository = toDoRepository;
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ToDo greetings(@PathVariable("id") Long id) {
-        ToDo todo = new ToDo();
-        todo.setName("Yasir Shabbir");
-        todo.setComplete(true);
 
-        toDoRepository.save(todo);
-        return todo;
-    }
-
-
-    @RequestMapping(value = "/add", method = RequestMethod.POST ,consumes =MediaType.APPLICATION_JSON_VALUE, produces= MediaType.APPLICATION_JSON_VALUE)
+    /*
+    This Request Handler used for Add "TODO" Object inside the repository
+     */
+    @RequestMapping(value = "/add", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ToDo greetings(@RequestBody ToDo toDo) {
         toDoRepository.save(toDo);
         return toDo;
     }
 
 
+    /*
+    This Request Handler used for retrieve all TODO Object from the repository
+     */
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     public Iterable findAll() {
         return toDoRepository.findAll();
     }
 
-    @RequestMapping(method = RequestMethod.POST , consumes =MediaType.APPLICATION_JSON_VALUE, produces= MediaType.APPLICATION_JSON_VALUE)
-    public ToDo create(@RequestBody ToDo todo) {
-        return toDoRepository.save(todo);
+
+    /*
+    This Request Handler used for retrieve Single TODO Object from the repository
+     */
+    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
+    public ToDo findToDo(@PathVariable("id") Long id) {
+        ToDo todo = toDoRepository.findOne(id);
+        return todo;
     }
+
+
+    /*
+This Request Handler used for Delete Single TODO Object from the repository
+ */
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    public void deleteToDo(@PathVariable("id") Long id) {
+        toDoRepository.delete(id);
+    }
+
 }
