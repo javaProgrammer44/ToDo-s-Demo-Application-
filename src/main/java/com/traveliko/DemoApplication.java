@@ -24,9 +24,6 @@ public class DemoApplication {
 		repository.save(toDo);
 
 
-		for (ToDo productDetail : repository.findAll()) {
-			System.out.println(toDo.getName());
-		}
 
 	}
 }
